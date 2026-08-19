@@ -206,7 +206,7 @@ function Home() {
       {/* BANDA TIPOGRÁFICA */}
       <section className="mt-16 overflow-hidden px-4" aria-hidden="true">
         <div className="mx-auto max-w-7xl">
-          <p className="ghost-type text-[15vw] leading-none text-primary/10 md:text-[9rem]">
+          <p className="ghost-type text-[11vw] leading-none text-primary/10 md:text-[6.5rem]">
             Urología / Cirugía / Maternidad / Diagnóstico /
           </p>
         </div>
