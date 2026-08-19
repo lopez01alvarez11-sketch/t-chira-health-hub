@@ -14,16 +14,152 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      appointments: {
+        Row: {
+          created_at: string
+          id: string
+          preferred_date: string
+          preferred_time: string | null
+          reason: string | null
+          specialty: string
+          staff_notes: string | null
+          status: Database["public"]["Enums"]["appointment_status"]
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          preferred_date: string
+          preferred_time?: string | null
+          reason?: string | null
+          specialty: string
+          staff_notes?: string | null
+          status?: Database["public"]["Enums"]["appointment_status"]
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          preferred_date?: string
+          preferred_time?: string | null
+          reason?: string | null
+          specialty?: string
+          staff_notes?: string | null
+          status?: Database["public"]["Enums"]["appointment_status"]
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      medical_records: {
+        Row: {
+          created_at: string
+          description: string | null
+          doctor: string | null
+          file_url: string | null
+          id: string
+          kind: Database["public"]["Enums"]["record_type"]
+          occurred_at: string
+          title: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          doctor?: string | null
+          file_url?: string | null
+          id?: string
+          kind: Database["public"]["Enums"]["record_type"]
+          occurred_at?: string
+          title: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          doctor?: string | null
+          file_url?: string | null
+          id?: string
+          kind?: Database["public"]["Enums"]["record_type"]
+          occurred_at?: string
+          title?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          birth_date: string | null
+          created_at: string
+          document_id: string | null
+          full_name: string
+          id: string
+          phone: string | null
+          updated_at: string
+          urosalud_plan: string | null
+        }
+        Insert: {
+          birth_date?: string | null
+          created_at?: string
+          document_id?: string | null
+          full_name?: string
+          id: string
+          phone?: string | null
+          updated_at?: string
+          urosalud_plan?: string | null
+        }
+        Update: {
+          birth_date?: string | null
+          created_at?: string
+          document_id?: string | null
+          full_name?: string
+          id?: string
+          phone?: string | null
+          updated_at?: string
+          urosalud_plan?: string | null
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "paciente" | "personal" | "admin"
+      appointment_status: "solicitada" | "confirmada" | "atendida" | "cancelada"
+      record_type: "consulta" | "rayos_x" | "laboratorio" | "hospitalizacion"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +286,10 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["paciente", "personal", "admin"],
+      appointment_status: ["solicitada", "confirmada", "atendida", "cancelada"],
+      record_type: ["consulta", "rayos_x", "laboratorio", "hospitalizacion"],
+    },
   },
 } as const
