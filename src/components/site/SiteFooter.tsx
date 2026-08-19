@@ -1,94 +1,132 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Facebook } from "lucide-react";
+import { Instagram, Facebook, Phone, MapPin, Clock } from "lucide-react";
 import { clinic, phones, units } from "@/data/clinic";
 
 export function SiteFooter() {
   return (
-    <footer className="mt-20 bg-primary-deep text-primary-foreground">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-3">
-        <div>
-          <p className="font-display text-lg font-bold">{clinic.legal}</p>
-          <p className="mt-3 text-sm text-primary-foreground/75">
-            {clinic.address}
-            <br />
-            {clinic.city}
-            <br />
-            {clinic.reference}
-          </p>
-          <div className="mt-5 flex gap-3">
-            <a
-              href={clinic.instagram}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Instagram del Urológico Hospital Clínico"
-              className="inline-flex size-9 items-center justify-center rounded-md border border-primary-foreground/25 hover:bg-primary-foreground/10"
-            >
-              <Instagram className="size-4" />
-            </a>
-            <a
-              href={clinic.facebook}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Facebook del Urológico Hospital Clínico"
-              className="inline-flex size-9 items-center justify-center rounded-md border border-primary-foreground/25 hover:bg-primary-foreground/10"
-            >
-              <Facebook className="size-4" />
-            </a>
+    <footer className="mt-16 px-4 pb-6">
+      <div className="mx-auto max-w-7xl overflow-hidden rounded-4xl bg-ink text-ink-foreground">
+        <div className="grid gap-6 border-b border-ink-foreground/10 px-6 py-8 sm:px-10 md:grid-cols-3">
+          <div className="flex items-start gap-3">
+            <Phone className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
+            <div className="min-w-0">
+              <p className="text-[11px] uppercase tracking-widest text-ink-foreground/50">Central</p>
+              <p className="font-display text-base font-semibold">(0276) 355.88.86</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <MapPin className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
+            <div className="min-w-0">
+              <p className="text-[11px] uppercase tracking-widest text-ink-foreground/50">Dirección</p>
+              <p className="text-sm leading-relaxed text-ink-foreground/85">{clinic.address}</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <Clock className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
+            <div className="min-w-0">
+              <p className="text-[11px] uppercase tracking-widest text-ink-foreground/50">Guardia</p>
+              <p className="text-sm leading-relaxed text-ink-foreground/85">
+                24 horas · 365 días del año
+              </p>
+            </div>
           </div>
         </div>
 
-        <div>
-          <p className="font-display text-sm font-bold uppercase tracking-widest text-accent">
-            Unidades del complejo
-          </p>
-          <ul className="mt-4 space-y-2 text-sm text-primary-foreground/80">
-            {units.map((u) => (
-              <li key={u.name}>{u.name}</li>
-            ))}
-          </ul>
-          <p className="mt-6 font-display text-sm font-bold uppercase tracking-widest text-accent">
-            Secciones
-          </p>
-          <ul className="mt-3 space-y-2 text-sm text-primary-foreground/80">
-            <li>
-              <Link to="/especialidades">Especialidades</Link>
-            </li>
-            <li>
-              <Link to="/emergencias">Emergencias y triaje</Link>
-            </li>
-            <li>
-              <Link to="/diagnostico">Diagnóstico y laboratorio</Link>
-            </li>
-            <li>
-              <Link to="/urosalud">Planes Urosalud</Link>
-            </li>
-            <li>
-              <Link to="/contacto">Contacto y citas</Link>
-            </li>
-          </ul>
-        </div>
+        <div className="grid gap-10 px-6 py-12 sm:px-10 md:grid-cols-3">
+          <div>
+            <p className="font-display text-lg font-bold">{clinic.legal}</p>
+            <p className="mt-3 text-sm leading-relaxed text-ink-foreground/65">
+              {clinic.city}
+              <br />
+              {clinic.reference}
+            </p>
+            <div className="mt-5 flex gap-3">
+              <a
+                href={clinic.instagram}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram del Urológico Hospital Clínico"
+                className="inline-flex size-10 items-center justify-center rounded-2xl border border-ink-foreground/15 transition-colors hover:bg-primary hover:text-primary-foreground"
+              >
+                <Instagram className="size-4" />
+              </a>
+              <a
+                href={clinic.facebook}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Facebook del Urológico Hospital Clínico"
+                className="inline-flex size-10 items-center justify-center rounded-2xl border border-ink-foreground/15 transition-colors hover:bg-primary hover:text-primary-foreground"
+              >
+                <Facebook className="size-4" />
+              </a>
+            </div>
+          </div>
 
-        <div>
-          <p className="font-display text-sm font-bold uppercase tracking-widest text-accent">
-            Teléfonos
-          </p>
-          <ul className="mt-4 space-y-4 text-sm">
-            {phones.map((g) => (
-              <li key={g.unit}>
-                <span className="block text-primary-foreground/60">{g.unit}</span>
-                {g.numbers.map((n) => (
-                  <a key={n.tel + n.label} href={`tel:${n.tel}`} className="block hover:text-accent">
-                    {n.label}
-                  </a>
-                ))}
+          <div>
+            <p className="font-display text-xs font-bold uppercase tracking-[0.2em] text-ink-foreground/50">
+              Unidades del complejo
+            </p>
+            <ul className="mt-4 space-y-2 text-sm text-ink-foreground/80">
+              {units.map((u) => (
+                <li key={u.name}>{u.name}</li>
+              ))}
+            </ul>
+            <p className="mt-8 font-display text-xs font-bold uppercase tracking-[0.2em] text-ink-foreground/50">
+              Secciones
+            </p>
+            <ul className="mt-3 space-y-2 text-sm text-ink-foreground/80">
+              <li>
+                <Link to="/especialidades" className="hover:text-primary">
+                  Especialidades
+                </Link>
               </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+              <li>
+                <Link to="/emergencias" className="hover:text-primary">
+                  Emergencias y triaje
+                </Link>
+              </li>
+              <li>
+                <Link to="/diagnostico" className="hover:text-primary">
+                  Diagnóstico y laboratorio
+                </Link>
+              </li>
+              <li>
+                <Link to="/urosalud" className="hover:text-primary">
+                  Planes Urosalud
+                </Link>
+              </li>
+              <li>
+                <Link to="/contacto" className="hover:text-primary">
+                  Contacto y citas
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-      <div className="border-t border-primary-foreground/15">
-        <div className="mx-auto max-w-6xl px-4 py-5 text-xs text-primary-foreground/60">
+          <div>
+            <p className="font-display text-xs font-bold uppercase tracking-[0.2em] text-ink-foreground/50">
+              Teléfonos
+            </p>
+            <ul className="mt-4 space-y-4 text-sm">
+              {phones.map((g) => (
+                <li key={g.unit}>
+                  <span className="block text-ink-foreground/50">{g.unit}</span>
+                  {g.numbers.map((n) => (
+                    <a
+                      key={n.tel + n.label}
+                      href={`tel:${n.tel}`}
+                      className="block hover:text-primary"
+                    >
+                      {n.label}
+                    </a>
+                  ))}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-t border-ink-foreground/10 px-6 py-5 text-xs text-ink-foreground/50 sm:px-10">
           © {new Date().getFullYear()} {clinic.legal}. La información de este sitio es de carácter
           orientativo y no sustituye la consulta médica presencial.
         </div>

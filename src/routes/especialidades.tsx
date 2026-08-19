@@ -35,12 +35,12 @@ function Especialidades() {
 
       <div className="mx-auto max-w-6xl space-y-12 px-4 py-14 md:py-20">
         {specialties.map((s, i) => (
-          <section key={s.group} className="rule-top rounded-lg border border-border bg-card p-6 md:p-8">
+          <section key={s.group} className="rule-top rounded-3xl border border-border bg-card p-6 md:p-8">
             <div className="flex flex-wrap items-baseline gap-3">
               <span className="font-display text-sm font-bold text-accent">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <h2 className="font-display text-xl font-bold text-primary md:text-2xl">{s.group}</h2>
+              <h2 className="font-display text-xl font-bold text-primary-deep md:text-2xl">{s.group}</h2>
             </div>
             <p className="mt-2 max-w-2xl text-sm text-muted-foreground">{s.lead}</p>
             <ul className="mt-6 grid gap-x-8 gap-y-3 md:grid-cols-2">
@@ -56,7 +56,7 @@ function Especialidades() {
           </section>
         ))}
 
-        <div className="rounded-lg bg-primary p-6 text-primary-foreground md:p-8">
+        <div className="rounded-3xl bg-primary p-6 text-primary-foreground md:p-8">
           <h2 className="font-display text-xl font-bold md:text-2xl">
             ¿No sabe con qué especialista debe empezar?
           </h2>

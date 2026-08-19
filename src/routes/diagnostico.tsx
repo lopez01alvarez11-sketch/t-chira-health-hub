@@ -47,7 +47,7 @@ function Diagnostico() {
             width={1200}
             height={912}
             alt="Sala de rayos X digital y ecografía del hospital"
-            className="h-56 w-full rounded-lg object-cover md:h-72"
+            className="h-56 w-full rounded-3xl object-cover md:h-72"
           />
           <img
             src={laboratorio}
@@ -55,7 +55,7 @@ function Diagnostico() {
             width={1200}
             height={912}
             alt="Laboratorio clínico Fertilab 2000 procesando muestras"
-            className="h-56 w-full rounded-lg object-cover md:h-72"
+            className="h-56 w-full rounded-3xl object-cover md:h-72"
           />
         </div>
 
@@ -63,13 +63,13 @@ function Diagnostico() {
           {diagnostics.map((d, i) => (
             <section
               key={d.title}
-              className="grid gap-6 rounded-lg border border-border bg-card p-6 md:grid-cols-[0.9fr_1.1fr] md:p-8"
+              className="grid gap-6 rounded-3xl border border-border bg-card p-6 md:grid-cols-[0.9fr_1.1fr] md:p-8"
             >
               <div>
                 <span className="font-display text-xs font-bold uppercase tracking-[0.2em] text-accent">
                   Servicio {String(i + 1).padStart(2, "0")}
                 </span>
-                <h2 className="mt-2 font-display text-xl font-bold text-primary">{d.title}</h2>
+                <h2 className="mt-2 font-display text-xl font-bold text-primary-deep">{d.title}</h2>
                 <p className="mt-2 text-sm text-muted-foreground">{d.detail}</p>
               </div>
               <ul className="grid gap-2 self-center">
@@ -87,7 +87,7 @@ function Diagnostico() {
         </div>
 
         {lab && (
-          <div className="mt-12 rounded-lg bg-primary p-6 text-primary-foreground md:p-8">
+          <div className="mt-12 rounded-3xl bg-primary p-6 text-primary-foreground md:p-8">
             <h2 className="font-display text-xl font-bold">Laboratorio Fertilab 2000</h2>
             <p className="mt-2 max-w-2xl text-sm text-primary-foreground/80">{lab.detail}</p>
             <div className="mt-5 flex flex-wrap gap-3">
