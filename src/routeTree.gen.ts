@@ -10,12 +10,25 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ContactoRouteImport } from './routes/contacto'
+import { Route as DiagnosticoRouteImport } from './routes/diagnostico'
 import { Route as EmergenciasRouteImport } from './routes/emergencias'
 import { Route as EspecialidadesRouteImport } from './routes/especialidades'
+import { Route as UrosaludRouteImport } from './routes/urosalud'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactoRoute = ContactoRouteImport.update({
+  id: '/contacto',
+  path: '/contacto',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiagnosticoRoute = DiagnosticoRouteImport.update({
+  id: '/diagnostico',
+  path: '/diagnostico',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EmergenciasRoute = EmergenciasRouteImport.update({
@@ -28,35 +41,71 @@ const EspecialidadesRoute = EspecialidadesRouteImport.update({
   path: '/especialidades',
   getParentRoute: () => rootRouteImport,
 } as any)
+const UrosaludRoute = UrosaludRouteImport.update({
+  id: '/urosalud',
+  path: '/urosalud',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contacto': typeof ContactoRoute
+  '/diagnostico': typeof DiagnosticoRoute
   '/emergencias': typeof EmergenciasRoute
   '/especialidades': typeof EspecialidadesRoute
+  '/urosalud': typeof UrosaludRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contacto': typeof ContactoRoute
+  '/diagnostico': typeof DiagnosticoRoute
   '/emergencias': typeof EmergenciasRoute
   '/especialidades': typeof EspecialidadesRoute
+  '/urosalud': typeof UrosaludRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contacto': typeof ContactoRoute
+  '/diagnostico': typeof DiagnosticoRoute
   '/emergencias': typeof EmergenciasRoute
   '/especialidades': typeof EspecialidadesRoute
+  '/urosalud': typeof UrosaludRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/emergencias' | '/especialidades'
+  fullPaths:
+    | '/'
+    | '/contacto'
+    | '/diagnostico'
+    | '/emergencias'
+    | '/especialidades'
+    | '/urosalud'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/emergencias' | '/especialidades'
-  id: '__root__' | '/' | '/emergencias' | '/especialidades'
+  to:
+    | '/'
+    | '/contacto'
+    | '/diagnostico'
+    | '/emergencias'
+    | '/especialidades'
+    | '/urosalud'
+  id:
+    | '__root__'
+    | '/'
+    | '/contacto'
+    | '/diagnostico'
+    | '/emergencias'
+    | '/especialidades'
+    | '/urosalud'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContactoRoute: typeof ContactoRoute
+  DiagnosticoRoute: typeof DiagnosticoRoute
   EmergenciasRoute: typeof EmergenciasRoute
   EspecialidadesRoute: typeof EspecialidadesRoute
+  UrosaludRoute: typeof UrosaludRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -66,6 +115,20 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contacto': {
+      id: '/contacto'
+      path: '/contacto'
+      fullPath: '/contacto'
+      preLoaderRoute: typeof ContactoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/diagnostico': {
+      id: '/diagnostico'
+      path: '/diagnostico'
+      fullPath: '/diagnostico'
+      preLoaderRoute: typeof DiagnosticoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/emergencias': {
@@ -82,13 +145,23 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EspecialidadesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/urosalud': {
+      id: '/urosalud'
+      path: '/urosalud'
+      fullPath: '/urosalud'
+      preLoaderRoute: typeof UrosaludRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContactoRoute: ContactoRoute,
+  DiagnosticoRoute: DiagnosticoRoute,
   EmergenciasRoute: EmergenciasRoute,
   EspecialidadesRoute: EspecialidadesRoute,
+  UrosaludRoute: UrosaludRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
