@@ -46,13 +46,13 @@ function Contacto() {
 
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-[1.1fr_0.9fr] md:py-20">
         <div>
-          <h2 className="font-display text-xl font-bold text-primary md:text-2xl">
+          <h2 className="font-display text-xl font-bold text-primary-deep md:text-2xl">
             Directorio por unidad
           </h2>
           <div className="mt-6 space-y-4">
             {phones.map((g) => (
-              <article key={g.unit} className="rounded-lg border border-border bg-card p-5">
-                <h3 className="font-display text-base font-bold text-primary">{g.unit}</h3>
+              <article key={g.unit} className="rounded-3xl border border-border bg-card p-5">
+                <h3 className="font-display text-base font-bold text-primary-deep">{g.unit}</h3>
                 <p className="mt-1 text-sm text-muted-foreground">{g.detail}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {g.numbers.map((n) => (
@@ -90,8 +90,8 @@ function Contacto() {
         </div>
 
         <div>
-          <div className="rounded-lg border border-border bg-card p-6">
-            <h2 className="font-display text-xl font-bold text-primary">Solicitar cita</h2>
+          <div className="rounded-3xl border border-border bg-card p-6">
+            <h2 className="font-display text-xl font-bold text-primary-deep">Solicitar cita</h2>
             <p className="mt-1 text-sm text-muted-foreground">
               Complete los datos y se abrirá WhatsApp con su solicitud lista para enviar.
             </p>
@@ -145,9 +145,9 @@ function Contacto() {
             </div>
           </div>
 
-          <div className="mt-6 rounded-lg border border-border bg-card p-6">
+          <div className="mt-6 rounded-3xl border border-border bg-card p-6">
             <MapPin className="size-6 text-accent" aria-hidden="true" />
-            <h3 className="mt-3 font-display text-lg font-bold text-primary">Sede clínica</h3>
+            <h3 className="mt-3 font-display text-lg font-bold text-primary-deep">Sede clínica</h3>
             <p className="mt-2 text-sm text-muted-foreground">
               {clinic.address}, {clinic.city}.
               <br />

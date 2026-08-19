@@ -42,7 +42,7 @@ function Urosalud() {
         {[plans.young, plans.senior].map((segment) => (
           <section key={segment.range} className="mb-12">
             <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-border pb-3">
-              <h2 className="font-display text-xl font-bold text-primary md:text-2xl">
+              <h2 className="font-display text-xl font-bold text-primary-deep md:text-2xl">
                 Planes {segment.range}
               </h2>
               <span className="text-xs uppercase tracking-widest text-muted-foreground">
@@ -51,8 +51,8 @@ function Urosalud() {
             </div>
             <div className="mt-6 grid gap-4 md:grid-cols-3">
               {segment.items.map((p) => (
-                <article key={p.name} className="rounded-lg border border-border bg-card p-6">
-                  <p className="font-display text-lg font-bold text-primary">{p.name}</p>
+                <article key={p.name} className="rounded-3xl border border-border bg-card p-6">
+                  <p className="font-display text-lg font-bold text-primary-deep">{p.name}</p>
                   <p className="mt-2 font-display text-3xl font-bold text-wellness">{p.coverage}</p>
                   <p className="mt-1 text-xs uppercase tracking-wide text-muted-foreground">
                     Cobertura
@@ -64,9 +64,9 @@ function Urosalud() {
           </section>
         ))}
 
-        <section className="grid gap-8 rounded-lg bg-wellness/12 p-6 md:grid-cols-2 md:p-8">
+        <section className="grid gap-8 rounded-3xl bg-wellness/12 p-6 md:grid-cols-2 md:p-8">
           <div>
-            <h2 className="font-display text-xl font-bold text-primary md:text-2xl">
+            <h2 className="font-display text-xl font-bold text-primary-deep md:text-2xl">
               Beneficios incluidos
             </h2>
             <ul className="mt-5 space-y-3">
@@ -78,14 +78,14 @@ function Urosalud() {
               ))}
             </ul>
           </div>
-          <div className="rounded-lg border border-border bg-card p-6">
-            <h3 className="font-display text-lg font-bold text-primary">Aseguradoras nacionales</h3>
+          <div className="rounded-3xl border border-border bg-card p-6">
+            <h3 className="font-display text-lg font-bold text-primary-deep">Aseguradoras nacionales</h3>
             <p className="mt-2 text-sm text-muted-foreground">
               Además de Urosalud, trabajamos con cartas avales y convenios de compañías de seguros
               nacionales para hospitalización y cirugía. Consulte su caso antes de un procedimiento
               programado.
             </p>
-            <h3 className="mt-6 font-display text-lg font-bold text-primary">
+            <h3 className="mt-6 font-display text-lg font-bold text-primary-deep">
               Odontología preventiva
             </h3>
             <p className="mt-2 text-sm text-muted-foreground">
@@ -96,9 +96,9 @@ function Urosalud() {
 
         {contact && (
           <section className="mt-12 grid gap-4 md:grid-cols-2">
-            <div className="rounded-lg border border-border bg-card p-6">
+            <div className="rounded-3xl border border-border bg-card p-6">
               <Phone className="size-6 text-accent" aria-hidden="true" />
-              <h3 className="mt-3 font-display text-lg font-bold text-primary">
+              <h3 className="mt-3 font-display text-lg font-bold text-primary-deep">
                 Afiliación y atención al afiliado
               </h3>
               <div className="mt-4 flex flex-wrap gap-2">
@@ -113,9 +113,9 @@ function Urosalud() {
                 ))}
               </div>
             </div>
-            <div className="rounded-lg border border-border bg-card p-6">
+            <div className="rounded-3xl border border-border bg-card p-6">
               <Building2 className="size-6 text-accent" aria-hidden="true" />
-              <h3 className="mt-3 font-display text-lg font-bold text-primary">
+              <h3 className="mt-3 font-display text-lg font-bold text-primary-deep">
                 Sede administrativa
               </h3>
               <p className="mt-3 text-sm text-muted-foreground">{clinic.adminAddress}</p>
