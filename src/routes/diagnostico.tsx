@@ -26,7 +26,7 @@ export const Route = createFileRoute("/diagnostico")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: Diagnostico;
+  component: Diagnostico,
 });
 
 function Diagnostico() {
