@@ -6,19 +6,20 @@
 
 /*
  * Sistema de diseño — Urológico Hospital Clínico.
- * Azul corporativo, cian diagnóstico, turquesa Urosalud y coral de emergencias.
+ * Azul vivo institucional, superficies claras, tarjetas muy redondeadas,
+ * cian diagnóstico, turquesa Urosalud y coral de emergencias.
  */
 
 @theme inline {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Montserrat", "Inter", ui-sans-serif, sans-serif;
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Sora", "Manrope", ui-sans-serif, sans-serif;
+  --radius-sm: calc(var(--radius) - 6px);
+  --radius-md: calc(var(--radius) - 3px);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
+  --radius-xl: calc(var(--radius) + 6px);
+  --radius-2xl: calc(var(--radius) + 14px);
+  --radius-3xl: calc(var(--radius) + 22px);
+  --radius-4xl: calc(var(--radius) + 32px);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -28,6 +29,9 @@
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary-deep: var(--primary-deep);
+  --color-primary-soft: var(--primary-soft);
+  --color-ink: var(--ink);
+  --color-ink-foreground: var(--ink-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
@@ -60,24 +64,29 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  /* #F4F7F9 */
-  --background: oklch(0.973 0.005 235);
-  /* #2B2D42 */
-  --foreground: oklch(0.303 0.033 274);
+  --radius: 1rem;
+  /* #EDF3FF */
+  --background: oklch(0.962 0.018 263);
+  /* #101828 */
+  --foreground: oklch(0.245 0.029 265);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.303 0.033 274);
+  --card-foreground: oklch(0.245 0.029 265);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.303 0.033 274);
-  /* #0D3B66 */
-  --primary: oklch(0.352 0.087 249.5);
-  --primary-foreground: oklch(0.99 0.003 235);
-  /* #0A2540 */
-  --primary-deep: oklch(0.262 0.06 249);
-  --secondary: oklch(0.941 0.014 235);
-  --secondary-foreground: oklch(0.352 0.087 249.5);
-  --muted: oklch(0.951 0.008 235);
-  --muted-foreground: oklch(0.52 0.026 258);
+  --popover-foreground: oklch(0.245 0.029 265);
+  /* #2F6BFF — azul vivo */
+  --primary: oklch(0.581 0.219 263.5);
+  --primary-foreground: oklch(0.99 0.004 263);
+  /* #1440B8 */
+  --primary-deep: oklch(0.432 0.187 264);
+  /* #DCE8FF */
+  --primary-soft: oklch(0.925 0.038 263);
+  /* #0B1220 */
+  --ink: oklch(0.184 0.026 265);
+  --ink-foreground: oklch(0.97 0.008 263);
+  --secondary: oklch(0.945 0.024 263);
+  --secondary-foreground: oklch(0.432 0.187 264);
+  --muted: oklch(0.955 0.016 263);
+  --muted-foreground: oklch(0.545 0.028 262);
   /* #00A8E8 */
   --accent: oklch(0.687 0.153 233.5);
   --accent-foreground: oklch(0.15 0.03 249);
@@ -89,38 +98,41 @@
   --emergency-foreground: oklch(0.99 0.005 21);
   --destructive: oklch(0.596 0.209 21.5);
   --destructive-foreground: oklch(0.99 0.005 21);
-  --border: oklch(0.899 0.011 240);
-  --input: oklch(0.899 0.011 240);
-  --ring: oklch(0.687 0.153 233.5);
-  --chart-1: oklch(0.352 0.087 249.5);
+  --border: oklch(0.902 0.018 263);
+  --input: oklch(0.902 0.018 263);
+  --ring: oklch(0.581 0.219 263.5);
+  --chart-1: oklch(0.581 0.219 263.5);
   --chart-2: oklch(0.687 0.153 233.5);
   --chart-3: oklch(0.723 0.129 174);
   --chart-4: oklch(0.596 0.209 21.5);
-  --chart-5: oklch(0.52 0.026 258);
-  --sidebar: oklch(0.99 0.003 235);
-  --sidebar-foreground: oklch(0.303 0.033 274);
-  --sidebar-primary: oklch(0.352 0.087 249.5);
-  --sidebar-primary-foreground: oklch(0.99 0.003 235);
-  --sidebar-accent: oklch(0.941 0.014 235);
-  --sidebar-accent-foreground: oklch(0.352 0.087 249.5);
-  --sidebar-border: oklch(0.899 0.011 240);
-  --sidebar-ring: oklch(0.687 0.153 233.5);
+  --chart-5: oklch(0.545 0.028 262);
+  --sidebar: oklch(0.99 0.004 263);
+  --sidebar-foreground: oklch(0.245 0.029 265);
+  --sidebar-primary: oklch(0.581 0.219 263.5);
+  --sidebar-primary-foreground: oklch(0.99 0.004 263);
+  --sidebar-accent: oklch(0.945 0.024 263);
+  --sidebar-accent-foreground: oklch(0.432 0.187 264);
+  --sidebar-border: oklch(0.902 0.018 263);
+  --sidebar-ring: oklch(0.581 0.219 263.5);
 }
 
 .dark {
-  --background: oklch(0.222 0.05 249);
-  --foreground: oklch(0.97 0.005 235);
-  --card: oklch(0.262 0.06 249);
-  --card-foreground: oklch(0.97 0.005 235);
-  --popover: oklch(0.262 0.06 249);
-  --popover-foreground: oklch(0.97 0.005 235);
-  --primary: oklch(0.687 0.153 233.5);
-  --primary-foreground: oklch(0.18 0.04 249);
-  --primary-deep: oklch(0.18 0.04 249);
-  --secondary: oklch(0.32 0.055 249);
-  --secondary-foreground: oklch(0.97 0.005 235);
-  --muted: oklch(0.32 0.055 249);
-  --muted-foreground: oklch(0.75 0.02 240);
+  --background: oklch(0.202 0.028 265);
+  --foreground: oklch(0.97 0.008 263);
+  --card: oklch(0.252 0.034 265);
+  --card-foreground: oklch(0.97 0.008 263);
+  --popover: oklch(0.252 0.034 265);
+  --popover-foreground: oklch(0.97 0.008 263);
+  --primary: oklch(0.64 0.2 263.5);
+  --primary-foreground: oklch(0.16 0.03 265);
+  --primary-deep: oklch(0.18 0.03 265);
+  --primary-soft: oklch(0.32 0.07 264);
+  --ink: oklch(0.15 0.02 265);
+  --ink-foreground: oklch(0.97 0.008 263);
+  --secondary: oklch(0.31 0.045 264);
+  --secondary-foreground: oklch(0.97 0.008 263);
+  --muted: oklch(0.31 0.045 264);
+  --muted-foreground: oklch(0.76 0.02 263);
   --accent: oklch(0.687 0.153 233.5);
   --accent-foreground: oklch(0.16 0.03 249);
   --wellness: oklch(0.723 0.129 174);
@@ -131,15 +143,15 @@
   --destructive-foreground: oklch(0.99 0.005 21);
   --border: oklch(1 0 0 / 12%);
   --input: oklch(1 0 0 / 16%);
-  --ring: oklch(0.687 0.153 233.5);
-  --sidebar: oklch(0.262 0.06 249);
-  --sidebar-foreground: oklch(0.97 0.005 235);
-  --sidebar-primary: oklch(0.687 0.153 233.5);
-  --sidebar-primary-foreground: oklch(0.18 0.04 249);
-  --sidebar-accent: oklch(0.32 0.055 249);
-  --sidebar-accent-foreground: oklch(0.97 0.005 235);
+  --ring: oklch(0.64 0.2 263.5);
+  --sidebar: oklch(0.252 0.034 265);
+  --sidebar-foreground: oklch(0.97 0.008 263);
+  --sidebar-primary: oklch(0.64 0.2 263.5);
+  --sidebar-primary-foreground: oklch(0.16 0.03 265);
+  --sidebar-accent: oklch(0.31 0.045 264);
+  --sidebar-accent-foreground: oklch(0.97 0.008 263);
   --sidebar-border: oklch(1 0 0 / 12%);
-  --sidebar-ring: oklch(0.687 0.153 233.5);
+  --sidebar-ring: oklch(0.64 0.2 263.5);
 }
 
 @layer base {
@@ -151,6 +163,7 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
   }
 
   h1,
@@ -158,8 +171,36 @@
   h3,
   h4 {
     font-family: var(--font-display);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
   }
+}
+
+/* Trama hexagonal muy sutil, para fondos claros o azules */
+@utility hex-field {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='96' viewBox='0 0 56 96'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.14' stroke-width='1'%3E%3Cpath d='M28 1 L54 16 L54 46 L28 61 L2 46 L2 16 Z'/%3E%3Cpath d='M28 49 L54 64 L54 94 L28 109 L2 94 L2 64 Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 56px 96px;
+}
+
+@utility hex-field-light {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='96' viewBox='0 0 56 96'%3E%3Cg fill='none' stroke='%232F6BFF' stroke-opacity='0.1' stroke-width='1'%3E%3Cpath d='M28 1 L54 16 L54 46 L28 61 L2 46 L2 16 Z'/%3E%3Cpath d='M28 49 L54 64 L54 94 L28 109 L2 94 L2 64 Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 56px 96px;
+}
+
+/* Tipografía "fantasma" gigante de fondo, como en las referencias editoriales */
+@utility ghost-type {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.85;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+}
+
+@utility card-soft {
+  background-color: var(--color-card);
+  border-radius: var(--radius-3xl);
+  box-shadow: 0 1px 2px oklch(0.4 0.05 264 / 0.04), 0 18px 40px -28px oklch(0.4 0.12 264 / 0.35);
 }
 
 @utility rule-top {
