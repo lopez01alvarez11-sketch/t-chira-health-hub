@@ -9,9 +9,7 @@ export const Route = createFileRoute("/auth")({
   ssr: false,
   validateSearch: (search: Record<string, unknown>): { redirect?: string } => {
     const value = search['redirect'];
-    return {
-      redirect: typeof value === "string" && value.startsWith("/") ? value : undefined,
-    };
+    return typeof value === "string" && value.startsWith("/") ? { redirect: value } : {};
   },
   head: () => ({
     meta: [
