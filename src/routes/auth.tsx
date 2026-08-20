@@ -7,11 +7,12 @@ import { useAuth } from "@/hooks/useAuth";
 
 export const Route = createFileRoute("/auth")({
   ssr: false,
-  validateSearch: (search: Record<string, unknown>) => ({
-    redirect: typeof search.redirect === "string" && search.redirect.startsWith("/")
-      ? search.redirect
-      : undefined,
-  }),
+  validateSearch: (search: Record<string, unknown>): { redirect?: string } => {
+    const value = search['redirect'];
+    return {
+      redirect: typeof value === "string" && value.startsWith("/") ? value : undefined,
+    };
+  },
   head: () => ({
     meta: [
       { title: "Acceso de pacientes | Urológico Hospital Clínico" },
