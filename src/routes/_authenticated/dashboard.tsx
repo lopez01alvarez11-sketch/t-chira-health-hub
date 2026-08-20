@@ -46,7 +46,7 @@ const recordTabs = [
 type RecordKind = (typeof recordTabs)[number]["key"];
 
 const statusLabel: Record<string, string> = {
-  pendiente: "Pendiente",
+  solicitada: "Solicitada",
   confirmada: "Confirmada",
   atendida: "Atendida",
   cancelada: "Cancelada",
@@ -140,7 +140,7 @@ function DashboardPage() {
   const profile = profileQuery.data;
   const records = (recordsQuery.data ?? []).filter((r) => r.kind === tab);
   const upcoming = (appointmentsQuery.data ?? []).filter(
-    (a) => a.status === "pendiente" || a.status === "confirmada",
+    (a) => a.status === "solicitada" || a.status === "confirmada",
   );
 
   return (
